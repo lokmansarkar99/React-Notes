@@ -1,0 +1,92 @@
+/* General body styling */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* List item styling */
+li {
+  background-color: #1e1e1e;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Image styling */
+img {
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+
+/* Heading styling */
+h2, h3 {
+  margin: 10px 0;
+  color: #ff6f61;
+}
+
+/* Paragraph styling */
+p {
+  margin: 5px 0;
+  color: #b0b0b0;
+}
+
+/* Button styling */
+button {
+  background-color: #ff6f61;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e5584d;
+}
+
+/* Link styling */
+a {
+  text-decoration: none;
+}
+
+a:hover button {
+  background-color: #e5584d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  ul {
+    padding: 0 10px;
+  }
+
+  li {
+    padding: 15px;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+  }
+}

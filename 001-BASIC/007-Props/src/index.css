@@ -1,0 +1,12 @@
+.rating-bg{
+  padding: 3px 15px;
+  border-radius: 15px;
+}
+
+.super_hit{
+  background-color: #7dcea0;
+}
+
+.average{
+  background-color: #f7dc6f;
+}
