@@ -22,6 +22,12 @@ export const Toggle = () => {
       >
         {isDarkMode? "Switch to Light Mode": "Switch to Dark Mode"}
       </button>
+
+      <div className="mt-4"> 
+
+      <h2 className="bg-mint-500 p-4 text-2xl ">HELLO TAILWIND CONFIG</h2>
+
+        </div >
     </div>
   );
 };

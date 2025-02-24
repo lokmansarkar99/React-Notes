@@ -1,0 +1,49 @@
+# Node modules (Frontend & Backend)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Build folders
+dist/
+build/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE settings & OS files
+.vscode/
+*.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Next.js & Vite caches
+.next/
+.vercel/
+out/
+*.eslintcache
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Exclude 000-PROJECT folder
+000-PROJECT/
