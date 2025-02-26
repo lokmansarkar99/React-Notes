@@ -23,9 +23,11 @@ export const Toggle = () => {
         {isDarkMode? "Switch to Light Mode": "Switch to Dark Mode"}
       </button>
 
-      <div className="mt-4"> 
+      <div className="mt-4 flex flex-col gap-2"> 
 
-      <h2 className="bg-mint-500 p-4 text-2xl ">HELLO TAILWIND CONFIG</h2>
+      <h2 className="bg-secondary p-2 text-2xl  rounded-2xl">HELLO TAILWIND CONFIG</h2>
+      <h2 className='bg-custom-green p-2 text-2xl rounded-2xl'>CUSTOM TAILWIND GREEN </h2>
+
 
         </div >
     </div>

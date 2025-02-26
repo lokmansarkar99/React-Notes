@@ -1,6 +1,15 @@
 @import "tailwindcss";
-@custom-variant dark (&:is(.dark *))
+
 
 @theme {
-    --color-mint-500: oklch(0.72 0.11 178);
-  }
+  --color-primary: #007bff; /* Example: A blue primary color */
+  --color-secondary: oklch(0.65 0.15 260); /* Example: OKLCH value */
+  --color-accent: rgb(255, 165, 0); /* Example: RGB value */
+  --color-custom-green: hsl(120, 70%, 50%); /* Example: HSL value */
+  --color-brand-light: #f0f0f5; /* Example: A light background color */
+  --color-brand-dark: #1f2937; /* Example: A dark text color */
+}
+
+
+
+@custom-variant dark (&:is(.dark *))
