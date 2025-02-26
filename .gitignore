@@ -47,3 +47,4 @@ coverage/
 
 # Exclude 000-PROJECT folder
 000-PROJECT/
+Test/
