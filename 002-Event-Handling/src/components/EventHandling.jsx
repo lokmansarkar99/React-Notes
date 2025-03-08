@@ -33,7 +33,7 @@ const EventHandling = () => {
       {/* {/* //? Passing Arguments to Event Handlers } */}
       {/* <button onClick={handleWelcomeUser("vinod")}>click Me</button> */}
       <button onClick={() => handleWelcomeUser('vinod')}>click Me</button>
-      <button onClick={() => handleWelcomeUser('Ram')}>click Me</button>
+      <button onClick={() => handleWelcomeUser('User')}>click Me</button>
     </>
   );
 };
