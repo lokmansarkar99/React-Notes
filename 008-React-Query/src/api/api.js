@@ -31,3 +31,16 @@ export const fetchPostById = async (postId) => {
     throw error;
   }
 };
+
+
+export const deletePost = async (id) => {
+  try {
+    const res = await api.delete(`/posts/${id}`)
+    // console.log(res)
+    return res.data
+    
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+}
