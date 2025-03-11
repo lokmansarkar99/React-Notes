@@ -1,0 +1,33 @@
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com",
+});
+
+
+
+export const fetchPostsOld = () => {
+    return api.get("/posts")
+}
+
+// 🔹 সব Posts লোড করা (Limit 5)
+export const fetchPosts = async () => {
+  try {
+    const res = await api.get("/posts", { params: { _limit: 50 } }); // ✅ _limit=5 এখানে সেট করুন
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    throw error; // ✅ React Query সঠিকভাবে Error Handle করবে
+  }
+};
+
+// 🔹 নির্দিষ্ট `postId` অনুযায়ী একক পোস্ট লোড করা
+export const fetchPostById = async (postId) => {
+  try {
+    const res = await api.get(`/posts/${postId}`);
+    return res.data;
+  } catch (error) {
+    console.error(`Error fetching post with ID ${postId}:`, error);
+    throw error;
+  }
+};
