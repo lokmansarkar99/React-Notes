@@ -11,9 +11,9 @@ export const fetchPostsOld = () => {
 }
 
 // 🔹 সব Posts লোড করা (Limit 5)
-export const fetchPosts = async () => {
+export const fetchPosts = async (pageNumber) => {
   try {
-    const res = await api.get("/posts", { params: { _limit: 50 } }); // ✅ _limit=5 এখানে সেট করুন
+    const res = await api.get("/posts", { params: { _start: pageNumber ,_limit: 3 } }); // ✅ _limit=5 এখানে সেট করুন
     return res.data;
   } catch (error) {
     console.error("Error fetching posts:", error);
