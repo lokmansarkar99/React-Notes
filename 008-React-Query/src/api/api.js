@@ -44,3 +44,16 @@ export const deletePost = async (id) => {
     throw error
   }
 }
+
+
+export const updatePost = async (id, payload) => {
+  try {
+    const res = await api.patch(`/posts/${id}`,payload)
+    // console.log(res)
+    return res.data
+    
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+}
