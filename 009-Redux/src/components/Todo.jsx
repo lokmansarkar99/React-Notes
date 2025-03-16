@@ -1,12 +1,17 @@
 import { MdDeleteForever } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
-import { addTask, deleteTask } from "../raw-redux";
+import { addTask, deleteTask, fetchTasks } from "../raw-redux";
 import { useState } from "react";
 
 const Todo = () => {
     const [task, setTask] = useState("")
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.task);
+
+
+ const handleFetchTasks = () => {
+  dispatch(fetchTasks())
+  }
 
   return (
     <div className="flex justify-center items-start min-h-screen bg-pink-200 p-4">
@@ -28,6 +33,7 @@ const Todo = () => {
           />
           <button onClick={() => { dispatch(addTask(task)) }} className="bg-green-500 text-white px-4 py-2 hover:bg-green-600 transition">Add</button>
           </form>
+          <button onClick={handleFetchTasks} className="bg-pink-400 text-white px-4 py-2 rounded-xl mb-4 hover:bg-pink-500 transition ">FetchTasks</button>
         
         <ul className="list-container space-y-2">
           {tasks.map((todo, index) => (

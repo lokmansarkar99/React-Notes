@@ -1,10 +1,15 @@
 // Importing createStore function from Redux
-import { createStore } from "redux";
+
+import { createStore, applyMiddleware } from "redux";
+
 import { composeWithDevTools } from '@redux-devtools/extension';
+import { thunk } from 'redux-thunk';
 
 // Action Types
 const ADD_TASK = "task/add";  // Action type to add a task
 const DELETE_TASK = "task/delete";  // Action type to delete a task
+const FETCH_TASKS = "task/fetch"
+
 
 // Initial state of the Redux store
 const initialState = {
@@ -32,6 +37,11 @@ const taskReducer = (state = initialState, action) => {
                 task: updatedTask,  // Return the updated task array
             };
 
+        case FETCH_TASKS:
+            return {
+                ...state, task: [...state.task, ...action.payload]
+            }
+
         default:
             // Return the current state if action type does not match
             return state;
@@ -39,7 +49,7 @@ const taskReducer = (state = initialState, action) => {
 };
 
 // Create Redux store with taskReducer
-export const store = createStore(taskReducer, composeWithDevTools() );
+export const store = createStore(taskReducer, composeWithDevTools(applyMiddleware(thunk)) );
 
 // Log the store object
 // console.log(store);
@@ -90,5 +100,19 @@ store.dispatch(deleteTask(0));  // Delete task at index 0
 
 // Log the updated state after deleting the task
 console.log("Updated State WITH ACTION CREATOR (DELETE)", store.getState());
+
+
+export const fetchTasks = () => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=3") 
+            const task = await res.json()
+            console.log(task)
+            dispatch({type: FETCH_TASKS, payload: task.map((currTask) => currTask.title)})
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
 
 
