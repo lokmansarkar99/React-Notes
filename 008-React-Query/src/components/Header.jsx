@@ -36,7 +36,23 @@ const Header = () => {
               >
                 Fetch Old
               </NavLink>
+
+              
             </li>
+
+            <li>
+              <NavLink
+                to="/is"
+                className={({ isActive }) =>
+                  `hover:text-purple-300 ${isActive ? "text-purple-300" : ""}`
+                }
+              >
+                IS
+              </NavLink>
+
+              
+            </li>
+
           </ul>
         </nav>
       </div>

@@ -4,6 +4,7 @@ import FetchOld from "./pages/FetchOld";
 import FetchRQ from "./pages/FetchRQ";
 import Layout from "./layout/Layout";
 import FetchIndv from "./pages/FetchIndv";
+import InfiniteScrolling from "./pages/InfiniteScrolling";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
 <Route path="rq/:postId" element={<FetchIndv />} />
 
         <Route path="old" element={<FetchOld />} />
+        <Route path="is" element={<InfiniteScrolling />} />
       </Route>
     </Routes>
   );
